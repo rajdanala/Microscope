@@ -15,10 +15,12 @@ Template.postSubmit.events({
         console.log('error', error);
         alert(error.reason);
       }
-      if(result){
+      if(result.postExists){
         alert('This Link has already been posted');
       }
-      Router.go('postPage',{_id:result._id});
+      //Router.go('postPage',{_id:result._id});
+
     });
+    Router.go('postsList');
   }
 });
